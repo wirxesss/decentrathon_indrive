@@ -1,12 +1,17 @@
-# Даем баллы за опыт
-    score += years_active * 5 
+def get_candidate_score(leadership_exp, motivation_level, achievements_count):
+    score = 0
+    # Баллы за лидерский опыт (проекты, волонтерство)
+    score += leadership_exp * 15 
     
-    # Если уже получал субсидии и вырос — это плюс
-    if had_subsidies_before and efficiency_growth > 0:
-        score += 20
+    # Баллы за мотивацию (от 1 до 10)
+    score += motivation_level * 5
+    
+    # Баллы за конкретные достижения
+    score += achievements_count * 10
         
     return score
 
-# Тестовый запуск
-print("Проверка системы скоринга...")
-print(f"Балл фермера: {get_farmer_score(10, True, 0.15)}")
+# Тестовый расчет для кандидата в InVision U
+print("Анализ потенциала лидера...")
+print(f"Итоговый балл кандидата: {get_candidate_score(3, 9, 5)}")
+print("Пояснение: Оценка сформирована на основе лидерского опыта и уровня мотивации.")
